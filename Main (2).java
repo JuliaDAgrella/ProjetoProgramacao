@@ -1,3 +1,5 @@
+// Júlia D’Agrella Araújo - RA: 10426655
+// Rafael Carvalho Cordeiro - RA: 10437533
 
 import java.util.Scanner;
 
