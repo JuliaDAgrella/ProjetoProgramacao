@@ -1,3 +1,6 @@
+// Júlia D’Agrella Araújo - RA: 10426655
+// Rafael Carvalho Cordeiro - RA: 10437533
+
 public class Cachorro {
     private String nome;
     private String cor;
