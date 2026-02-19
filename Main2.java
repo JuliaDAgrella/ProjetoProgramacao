@@ -16,8 +16,9 @@ public class Main2 {
 
             switch (opcao) {
                 case 1:
-                    cadastrarCachorro(meusCachorros, qtdCaes, scanner);
-                    qtdCaes++;
+                    if (cadastrarCachorro(meusCachorros, qtdCaes, scanner)) {
+                        qtdCaes++;
+                    }
                     break;
                 case 2:
                     buscarCachorro(meusCachorros, qtdCaes, scanner);
@@ -58,18 +59,22 @@ public class Main2 {
     }
 
     // Método para cadastrar um novo cão
-    public static void cadastrarCachorro(Cachorro2[] meusCachorros, int qtdCaes, Scanner scanner) { // Usa Cachorro2
+    public static boolean cadastrarCachorro(Cachorro2[] meusCachorros, int qtdCaes, Scanner scanner) {
         if (qtdCaes < meusCachorros.length) {
             System.out.print("Digite o nome do cão: ");
             String nome = scanner.nextLine();
             System.out.print("Digite a cor do cão: ");
             String cor = scanner.nextLine();
-            meusCachorros[qtdCaes] = new Cachorro2(nome, cor); // Cria Cachorro2
+            meusCachorros[qtdCaes] = new Cachorro2(nome, cor);
             System.out.println("Cão cadastrado com sucesso!");
-        } else {
+            return true;
+        } 
+        else {
             System.out.println("Limite de cães atingido.");
+            return false;
         }
     }
+
 
     // Método para buscar um cão pelo nome
     public static void buscarCachorro(Cachorro2[] meusCachorros, int qtdCaes, Scanner scanner) { // Usa Cachorro2
@@ -150,4 +155,5 @@ public class Main2 {
             System.out.println("Não há cães adotados.");
         }
     }
+
 }
